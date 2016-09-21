@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iteration</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>Fallen Legends</h3>
+      <div>
+        <ul>
+          <!-- <li>Harambe</li>
+          <li>Bjarne Stroustrup</li>
+          <li>Sigmund Freud</li>
+          <li>Claude Shannon</li> -->
+          <li v-for="itemx in legends">
+            {{itemx}}
+          </li>
+          <!-- <li>{{listItem2}}</li>
+          <li>{{listItem3}}</li>
+          <li>{{listItem4}}</li>
+          <li>{{listItem5}}</li> -->
+        </ul>
+
+        <button @click="addLegend()">Add a Fallen Legend</button>
+        <button @click="removeLegend()">Remove the Legends!</button>
+      </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      new Vue({
+        el:'#app',
+        data: {
+          // listItem1: "Harambe",
+          // listItem2: "Bjarne Stroustrup",
+          // listItem3: "Sigmund Freud",
+          // listItem4: "Claude Shannon"
+          legends: [
+            "Harambe",
+            "Bjarne Stroustrup",
+            "Sigmund Freud",
+            "Claude Shannon"]
+        },
+        methods: {
+          addLegend: function(){
+              // this.listItem5 = prompt("Who is this legend?");
+              // alert("Down for Maintenance!!!")
+              var newLegend = prompt("Who is this new Legend?");
+              this.legends.push(newLegend);
+          },
+          removeLegend: function() {
+            this.legends.pop();
+          }
+        },
+      })
+    </script>
+  </body>
+</html>
